@@ -1,0 +1,78 @@
+{% extends "base.html" %} {% load static %} {% block 'head' %}
+<link rel="stylesheet" href="{% static 'usuarios/css/usuarios.css'%}" />
+{% endblock %} {% block 'body' %}
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md d-flex justify-content-center">
+      <div class="cont-cadastro">
+        <br />
+        <br />
+        <section class="cont-logo">
+          <img class="logo" src="{% static "global/img/logo.png" %}" />
+          <label class="text-logo">HEALING</label>
+        </section>
+        <hr />
+
+        <form action="" method="post">
+          <h2 class="fonte-destaque1 text-uppercase">Faça seu cadastro</h2>
+          <br />
+          <label for="">Nome de usuário</label>
+          <input
+            type="text"
+            name="username"
+            id=""
+            class="form-control"
+            placeholder="Digite seu usuário..."
+          />
+          <br />
+          <label for="">Informe seu E-mail</label>
+          <input
+            type="text"
+            name="email"
+            id=""
+            placeholder="Digite seu e-mail válido..."
+            class="form-control"
+          />
+          <br />
+          <div class="row">
+            <div class="col-md">
+              <label for="">Informe sua Senha</label>
+              <input
+                type="password"
+                name="senha"
+                class="form-control"
+                placeholder="Digite sua senha..."
+              />
+            </div>
+            <div class="col-md">
+              <label for="">Confirmar senha</label>
+              <input
+                type="password"
+                name="confirmar_senha"
+                class="form-control"
+                placeholder="Digite sua senha novamente ..."
+                id=""
+              />
+            </div>
+          </div>
+          <br />
+
+          <input
+            type="submit"
+            value="Cadastrar"
+            class="btn btn-success btn-dark-color"
+          />
+          <a href="#" class="btn btn-dark-color-outline">Já possuo uma conta</a>
+        </form>
+      </div>
+    </div>
+    <div
+      class="col-md bg-main d-flex justify-content-center align-items-center"
+    >
+      <img src="{% static "usuarios/img/ilustracao.png" %}" alt="" />
+    </div>
+  </div>
+</div>
+
+{% endblock 'body' %}
