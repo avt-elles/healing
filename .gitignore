@@ -1,6 +1,6 @@
 **/__pycache__
 .pytest_cache
-/venv
+/ venv
 .venv
-.env
-db.sqlite3
+venv
+.db.sqlite3
