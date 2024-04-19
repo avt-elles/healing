@@ -4,7 +4,7 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md d-flex justify-content-center">
+    <div class="col-md d-flex justify-content-around align-items-center">
       <div class="cont-cadastro">
         <br />
         <br />
@@ -14,8 +14,14 @@
         </section>
         <hr />
 
-        <form action="" method="post">
+        <form action="{% url 'cadastro' %}" method="POST">
+          {% csrf_token %}
+
           <h2 class="fonte-destaque1 text-uppercase">Faça seu cadastro</h2>
+
+          {% if messages %} {% for message in messages %}
+          <section class="alert {{message.tags}}">{{message}}</section>
+          {% endfor %} {% endif %}
           <br />
           <label for="">Nome de usuário</label>
           <input
@@ -63,7 +69,9 @@
             value="Cadastrar"
             class="btn btn-success btn-dark-color"
           />
-          <a href="#" class="btn btn-dark-color-outline">Já possuo uma conta</a>
+          <a href="{% url 'login' %}" class="btn btn-dark-color-outline"
+            >Já possuo uma conta</a
+          >
         </form>
       </div>
     </div>
